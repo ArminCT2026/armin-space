@@ -1,170 +1,147 @@
-.card p {
-    color: #b6c8e4;
-    line-height: 2;
-    font-size: 14px;
-}
-
-.research {
-    max-width: 850px;
-    margin: auto;
-    padding: 35px;
-    border-radius: 20px;
-    background: linear-gradient(140deg,#101e40,#080d20);
-    border: 1px solid #2873b7;
-    box-shadow: 0 0 30px #071d47;
-    line-height: 2.5;
-}
-
-.research h3 {
-    color: #68caff;
-    margin-bottom: 20px;
-}
-
-.research p {
-    color: #c4d5ed;
-}
-
-footer {
-    padding: 35px;
-    text-align: center;
-    background: #030817;
-    border-top: 1px solid #214c80;
-    color: #8da9ce;
-    line-height: 2.5;
-}
-
-@media(max-width:650px) {
-    header {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    nav a {
-        margin: 5px;
-    }
-
-    .hero {
-        text-align: center;
-    }
-
-    .earth-area {
-        transform: scale(.85);
-    }
-}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ARMIN SPACE؛ سفری علمی به سیارات، کهکشان‌ها و شگفتی‌های جهان هستی.">
+<meta name="theme-color" content="#050816">
+<title>ARMIN SPACE | کاوش در جهان</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+:root{--bg:#050816;--panel:#0d1630;--panel2:#101d3b;--blue:#65d7ff;--violet:#9b83ff;--muted:#aebbd5;--line:rgba(132,174,255,.18)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:#f4f7ff;font-family:"Vazirmatn",Tahoma,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+#starfield{position:fixed;inset:0;width:100%;height:100%;z-index:-2}
+.space-glow{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 72% 18%,rgba(57,75,170,.18),transparent 42%),radial-gradient(ellipse at 12% 70%,rgba(25,139,190,.12),transparent 40%)}
+header{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:15px clamp(18px,6vw,88px);background:rgba(5,8,22,.78);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:1.5px;color:#fff;font-size:1.15rem;direction:ltr}
+.brand-mark{width:37px;height:37px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,#28c9ff,#765cff);box-shadow:0 0 25px #288dff66}
+nav{display:flex;gap:25px;color:#c9d4ed;font-size:.9rem}
+nav a{transition:.2s}nav a:hover{color:var(--blue)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:white;border-radius:10px;padding:8px 12px;font-size:1.1rem}
+.hero{min-height:690px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:25px;padding:65px clamp(20px,8vw,120px) 85px;max-width:1500px;margin:auto}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--blue);border:1px solid #4acbff55;background:#10213b99;border-radius:50px;padding:8px 15px;font-size:.82rem}
+.pulse{width:7px;height:7px;border-radius:50%;background:#65e6ff;box-shadow:0 0 12px #65e6ff}
+.hero h1{direction:ltr;text-align:right;font-size:clamp(2.8rem,6vw,5.8rem);line-height:1.08;margin:22px 0 15px;font-weight:900;letter-spacing:1px;background:linear-gradient(100deg,#fff 15%,#7edfff 52%,#a38cff 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h2{font-size:clamp(1.25rem,2.3vw,1.8rem);margin:0 0 15px;color:#e5edff}
+.hero-copy{max-width:580px;color:var(--muted);line-height:2.2;font-size:1rem}
+.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:12px 22px;border-radius:13px;font-weight:700;transition:.25s;border:1px solid transparent}
+.btn-primary{background:linear-gradient(110deg,#1ba9e8,#745bfa);box-shadow:0 8px 30px #3a7bff44}
+.btn-outline{border-color:#6e91c755;background:#0b1530;color:#dce8ff}
+.btn:hover{transform:translateY(-3px);filter:brightness(1.12)}
+.hero-visual{position:relative;min-height:440px;display:grid;place-items:center}
+.earth-wrap{width:min(390px,72vw);aspect-ratio:1;position:relative;display:grid;place-items:center;animation:float 6s ease-in-out infinite}
+.earth{width:76%;height:76%;border-radius:50%;background-image:linear-gradient(90deg,rgba(0,5,22,.45),transparent 48%,rgba(0,8,25,.12)),url('https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?auto=format&fit=crop&w=1000&q=85');background-size:cover;background-position:center;box-shadow:inset -28px -8px 45px #020617, inset 8px 5px 25px #a8eaff66,0 0 35px #3bbcff88,0 0 100px #2379ff44;position:relative}
+.earth:after{content:"";position:absolute;inset:-8px;border-radius:50%;border:2px solid #69dfff55;box-shadow:0 0 22px #52caff66}
+.orbit{position:absolute;width:112%;height:39%;border:1px solid #8b9dff8a;border-radius:50%;transform:rotate(-24deg);box-shadow:0 0 16px #716dff33}
+.orbit:after{content:"";position:absolute;width:13px;height:13px;border-radius:50%;background:#b9a7ff;box-shadow:0 0 20px #9d8bff;top:11%;left:14%}
+.moon{position:absolute;width:43px;height:43px;border-radius:50%;top:7%;right:5%;background:radial-gradient(circle at 30% 30%,#fff,#9ba9c4 45%,#39435e 80%);box-shadow:0 0 25px #b8c9ff66}
+.visual-caption{position:absolute;bottom:0;right:0;background:#0b1530cc;border:1px solid var(--line);border-radius:13px;padding:12px 17px;color:#cbd8f3;font-size:.8rem;backdrop-filter:blur(8px)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:35px;max-width:520px}
+.stat{padding:13px 15px;border-right:2px solid #5bcfff;background:linear-gradient(90deg,transparent,#12203b88);border-radius:8px}
+.stat strong{display:block;color:#fff;font-size:1.2rem}.stat span{font-size:.75rem;color:#9eafcf}
+section{padding:75px clamp(20px,8vw,120px);max-width:1500px;margin:auto}
+.section-head{text-align:center;margin-bottom:35px}
+.kicker{color:var(--blue);font-size:.82rem;font-weight:700}
+.section-head h2{font-size:clamp(1.7rem,3vw,2.5rem);margin:8px 0 10px}
+.section-head p{color:var(--muted);margin:0;line-height:2}
+.planet-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+.planet-card,.feature-card{background:linear-gradient(145deg,#111d3aee,#091126ee);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.3s}
+.planet-card:hover,.feature-card:hover{transform:translateY(-7px);border-color:#62cfff88;box-shadow:0 18px 40px #0005,0 0 25px #348dff18}
+.planet-image{height:175px;display:grid;place-items:center;background:radial-gradient(circle,#1d3b69,#0b142b 68%)}
+.planet-image img{width:145px;height:145px;object-fit:contain;filter:drop-shadow(0 0 18px #65baff55);transition:.5s}
+.planet-card:hover .planet-image img{transform:scale(1.1) rotate(7deg)}
+.planet-info{padding:17px 18px 20px}
+.planet-info h3{margin:0 0 7px;color:#e8f5ff}.planet-info p{margin:0;color:var(--muted);font-size:.83rem;line-height:1.9}
+.text-link{display:inline-block;color:var(--blue);font-size:.82rem;margin-top:13px;font-weight:700}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feature-card{padding:25px}
+.feature-icon{font-size:2rem;margin-bottom:12px}
+.feature-card h3{margin:0 0 8px;color:#e8f5ff}.feature-card p{margin:0;color:var(--muted);font-size:.88rem;line-height:2}
+.research-box{display:grid;grid-template-columns:.8fr 1.2fr;gap:25px;align-items:center;padding:clamp(22px,4vw,40px);border-radius:24px;border:1px solid #568fff44;background:linear-gradient(120deg,#101c3beF,#0a1026f2);box-shadow:0 20px 60px #0004}
+.research-art{min-height:230px;border-radius:18px;display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,#365e9c,#121e43 50%,#0a1026 75%);font-size:6rem}
+.research-content h3{font-size:1.4rem;margin:8px 0 12px;color:#eaf5ff}.research-content p{color:var(--muted);line-height:2.1;font-size:.9rem}
+.tag{display:inline-block;color:#8ee2ff;background:#163450;border:1px solid #4dcaff44;padding:5px 11px;border-radius:30px;font-size:.75rem}
+footer{border-top:1px solid var(--line);padding:30px 20px;text-align:center;color:#8798b8;background:#040714;line-height:2}
+footer strong{color:#9adfff;direction:ltr;display:inline-block}
+.modal{position:fixed;inset:0;z-index:50;background:#020510cc;display:none;place-items:center;padding:20px;backdrop-filter:blur(8px)}
+.modal.show{display:grid}
+.modal-inner{max-width:520px;width:100%;padding:28px;background:#101b38;border:1px solid #5a9bdb66;border-radius:20px;position:relative;box-shadow:0 20px 80px #0009}
+.modal-inner h3{color:var(--blue);margin-top:0}.modal-inner p{color:#c5d3ec;line-height:2}
+.close{position:absolute;left:15px;top:12px;background:#1c2b4e;color:white;border:0;border-radius:8px;padding:6px 11px;cursor:pointer}
+@media(max-width:950px){.planet-grid{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr;text-align:center}.hero-copy,.stats{margin-left:auto;margin-right:auto}.actions{justify-content:center}.hero-visual{min-height:380px}.research-box{grid-template-columns:1fr}.research-art{min-height:180px}}
+@media(max-width:650px){header{padding:12px 18px}.menu-btn{display:block}nav{display:none;position:absolute;top:65px;right:12px;left:12px;padding:17px;background:#0c1530;border:1px solid var(--line);border-radius:14px;flex-direction:column;gap:16px}nav.open{display:flex}.hero{padding-top:45px;min-height:auto}.hero-visual{min-height:320px}.earth-wrap{width:280px}.stats{gap:6px}.stat{padding:10px 7px}.stat strong{font-size:1rem}.stat span{font-size:.65rem}.planet-grid,.feature-grid{grid-template-columns:1fr}.planet-image{height:190px}section{padding-top:55px;padding-bottom:55px}}
 </style>
 </head>
-
 <body>
-
-<div class="stars"></div>
-
+<canvas id="starfield"></canvas><div class="space-glow"></div>
 <header>
-    <div class="logo">🚀 ARMIN SPACE</div>
-
-    <nav>
-        <a href="#home">خانه</a>
-        <a href="#universe">جهان</a>
-        <a href="#research">پژوهش‌ها</a>
-    </nav>
+  <a class="brand" href="#home"><span class="brand-mark">✦</span> ARMIN SPACE</a>
+  <button class="menu-btn" id="menuBtn" aria-label="باز کردن منو">☰</button>
+  <nav id="nav">
+    <a href="#home">خانه</a><a href="#planets">سیارات</a><a href="#discover">اکتشافات</a><a href="#research">پژوهش علمی</a>
+  </nav>
 </header>
 
-<div class="hero" id="home">
+<main>
+<section class="hero" id="home">
+  <div>
+    <span class="eyebrow"><span class="pulse"></span> پایگاه کاوش و دانش کیهانی</span>
+    <h1>ARMIN SPACE</h1>
+    <h2>از زمین تا بی‌نهایت؛ جهان منتظر کشف شدن است.</h2>
+    <p class="hero-copy">به سفری میان سیارات، ستاره‌ها و رازهای شگفت‌انگیز کیهان خوش آمدید. اینجا علم را ساده، جذاب و با کنجکاوی دنبال می‌کنیم.</p>
+    <div class="actions"><a class="btn btn-primary" href="#planets">🚀 شروع کاوش</a><a class="btn btn-outline" href="#research">🔬 دیدن پژوهش‌ها</a></div>
+    <div class="stats"><div class="stat"><strong>۸</strong><span>سیاره منظومه شمسی</span></div><div class="stat"><strong>۴٫۶ میلیارد</strong><span>سال عمر تقریبی منظومه شمسی</span></div><div class="stat"><strong>بی‌نهایت؟</strong><span>پرسش‌های کشف‌نشده</span></div></div>
+  </div>
+  <div class="hero-visual"><div class="earth-wrap"><div class="orbit"></div><div class="earth" role="img" aria-label="تصویر زمین"></div><div class="moon"></div></div><div class="visual-caption">🌍 خانه‌ی ما؛ سیاره‌ی زمین</div></div>
+</section>
 
-    <div class="intro">
-        <h1>ARMIN SPACE</h1>
-        <h2>به جهان ناشناخته خوش آمدید 🌌</h2>
+<section id="planets">
+  <div class="section-head"><span class="kicker">SOLAR SYSTEM</span><h2>همسایه‌های کیهانی ما</h2><p>با چند مورد از شگفت‌انگیزترین سیارات منظومه شمسی آشنا شوید.</p></div>
+  <div class="planet-grid">
+    <article class="planet-card"><div class="planet-image"><img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679?auto=format&fit=crop&w=400&q=85" alt="سیاره عطارد"></div><div class="planet-info"><h3>عطارد ☿</h3><p>نزدیک‌ترین سیاره به خورشید؛ دنیایی سنگی با تغییرات دمایی بسیار زیاد.</p><a href="#" class="text-link" data-title="عطارد" data-info="عطارد کوچک‌ترین سیاره منظومه شمسی و نزدیک‌ترین سیاره به خورشید است. این سیاره جوّ بسیار رقیقی دارد و سطح آن پر از دهانه‌های برخوردی است.">بیشتر بدانید ←</a></div></article>
+    <article class="planet-card"><div class="planet-image"><img src="https://images.unsplash.com/photo-1614732484003-ef9881555dc3?auto=format&fit=crop&w=400&q=85" alt="سیاره زحل"></div><div class="planet-info"><h3>زحل ♄</h3><p>غول گازی مشهور به حلقه‌های بزرگ و چشمگیرش.</p><a href="#" class="text-link" data-title="زحل" data-info="زحل ششمین سیاره از خورشید است. حلقه‌های آن از تکه‌های یخ، سنگ و غبار تشکیل شده‌اند و این سیاره تعداد زیادی قمر شناخته‌شده دارد.">بیشتر بدانید ←</a></div></article>
+    <article class="planet-card"><div class="planet-image"><img src="https://images.unsplash.com/photo-1630839437035-dac17da580d0?auto=format&fit=crop&w=400&q=85" alt="سیاره مشتری"></div><div class="planet-info"><h3>مشتری ♃</h3><p>بزرگ‌ترین سیاره منظومه شمسی با طوفان بزرگ سرخ.</p><a href="#" class="text-link" data-title="مشتری" data-info="مشتری بزرگ‌ترین سیاره منظومه شمسی است. لکه سرخ بزرگ آن طوفانی عظیم و پایدار است که صدها سال مشاهده شده است.">بیشتر بدانید ←</a></div></article>
+    <article class="planet-card"><div class="planet-image"><img src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&w=400&q=85" alt="سیاره مریخ"></div><div class="planet-info"><h3>مریخ ♂</h3><p>سیاره سرخ؛ یکی از مهم‌ترین مقصدهای پژوهش‌های فضایی.</p><a href="#" class="text-link" data-title="مریخ" data-info="مریخ به دلیل وجود اکسید آهن در خاکش سرخ‌رنگ دیده می‌شود. دانشمندان با مدارگردها و مریخ‌نوردها، گذشته آبی و امکان‌پذیری زیست‌پذیری آن را بررسی می‌کنند.">بیشتر بدانید ←</a></div></article>
+  </div>
+</section>
 
-        <p>
-        سفری هیجان‌انگیز به اعماق کیهان،
-        سیارات شگفت‌انگیز و رازهای جهان.
-        اینجا مرزهای دانش را کشف می‌کنیم.
-        </p>
-
-        <a href="#universe" class="button">
-        🚀 شروع کاوش
-        </a>
-    </div>
-
-    <div class="earth-area">
-        <div class="orbit"></div>
-        <div class="earth"></div>
-    </div>
-
-</div>
-
-<section id="universe">
-
-    <h2 class="title">🌌 کاوش در جهان</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <div class="icon">🪐</div>
-            <h3>سیارات</h3>
-            <p>راز سیارات منظومه شمسی را کشف کنید.</p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🌌</div>
-            <h3>کهکشان‌ها</h3>
-            <p>سفری به میان میلیاردها ستاره.</p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🕳️</div>
-            <h3>سیاه‌چاله‌ها</h3>
-            <p>آشنایی با اسرار عجیب سیاه‌چاله‌ها.</p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🚀</div>
-            <h3>ماموریت‌های فضایی</h3>
-            <p>ماجراجویی در تاریخ اکتشافات فضایی.</p>
-        </div>
-
-    </div>
-
+<section id="discover">
+  <div class="section-head"><span class="kicker">EXPLORE THE UNKNOWN</span><h2>دروازه‌هایی به ناشناخته‌ها</h2><p>هر کشف تازه، پرسش‌های هیجان‌انگیزتری به همراه دارد.</p></div>
+  <div class="feature-grid">
+    <article class="feature-card"><div class="feature-icon">🌌</div><h3>کهکشان‌ها</h3><p>مجموعه‌های عظیمی از ستاره‌ها، گاز، غبار و ماده تاریک که در پهنه کیهان گسترده‌اند.</p></article>
+    <article class="feature-card"><div class="feature-icon">🕳️</div><h3>سیاه‌چاله‌ها</h3><p>ناحیه‌هایی از فضا با گرانشی بسیار قوی؛ جایی که حتی نور هم نمی‌تواند از افق رویداد بگریزد.</p></article>
+    <article class="feature-card"><div class="feature-icon">🛰️</div><h3>ماموریت‌های فضایی</h3><p>ماهواره‌ها، کاوشگرها و تلسکوپ‌ها پنجره ما برای شناخت جهان دوردست هستند.</p></article>
+  </div>
 </section>
 
 <section id="research">
-
-    <h2 class="title">🔬 مرکز پژوهش‌های علمی</h2>
-
-    <div class="research">
-
-        <h3>🌍 تولد ماه؛ نتیجه یک برخورد عظیم کیهانی</h3>
-
-        <p>
-        حدود ۴٫۵ میلیارد سال پیش، جرمی آسمانی
-        به نام تیا احتمالاً با زمین اولیه برخورد کرد.
-        </p>
-
-        <p>
-        بر اساس فرضیه برخورد عظیم، مواد پرتاب‌شده
-        از این برخورد در اطراف زمین جمع شدند و
-        به تدریج ماه را تشکیل دادند.
-        </p>
-
-        <p>
-        این نظریه یکی از پذیرفته‌شده‌ترین توضیحات
-        علمی برای شکل‌گیری ماه است.
-        </p>
-
-        <br>
-
-        <p><strong>پژوهشگر: ARMIN MOUSAVI</strong></p>
-        <p>موضوع: نجوم و منظومه شمسی</p>
-
-    </div>
-
+  <div class="section-head"><span class="kicker">FEATURED RESEARCH</span><h2>پژوهش علمی ویژه</h2><p>یک فرضیه مشهور درباره یکی از نزدیک‌ترین همسایه‌های زمین.</p></div>
+  <div class="research-box">
+    <div class="research-art">🌍☄️</div>
+    <div class="research-content"><span class="tag">نجوم · شکل‌گیری ماه</span><h3>ماه چگونه به وجود آمد؟</h3><p>یکی از توضیح‌های اصلی دانشمندان، «فرضیه برخورد عظیم» است. طبق این فرضیه، حدود ۴٫۵ میلیارد سال پیش جرمی آسمانی که معمولاً «تیا» نامیده می‌شود، با زمینِ جوان برخورد کرد. بخشی از مواد پرتاب‌شده به مدار زمین رفت و در گذر زمان به هم پیوست و ماه را شکل داد.</p><p>این فرضیه با شواهدی مانند شباهت‌های ترکیبی میان سنگ‌های زمین و ماه پشتیبانی می‌شود؛ بااین‌حال، جزئیات دقیق این رویداد همچنان موضوع پژوهش علمی است.</p><p><strong>پژوهشگر و گردآورنده: ARMIN MOUSAVI</strong></p><a class="btn btn-primary" href="#" id="researchMore">مطالعه خلاصه پژوهش</a></div>
+  </div>
 </section>
+</main>
+<footer><strong>ARMIN SPACE</strong><br>کاوش کن، بپرس، یاد بگیر. ✦<br>Created by ARMIN MOUSAVI · 2026</footer>
 
-<footer>
-    <h2>ARMIN SPACE 🚀</h2>
-    <p>Explore Beyond The Universe</p>
-    <p>Created by ARMIN MOUSAVI</p>
-    <p>© 2026 All Rights Reserved</p>
-</footer>
-
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-inner"><button class="close" id="closeModal">بستن ✕</button><h3 id="modalTitle"></h3><p id="modalText"></p></div></div>
+<script>
+const canvas=document.getElementById('starfield'),ctx=canvas.getContext('2d');
+let stars=[];
+function resize(){canvas.width=innerWidth*devicePixelRatio;canvas.height=innerHeight*devicePixelRatio;ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);stars=Array.from({length:Math.min(180,Math.floor(innerWidth/7))},()=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.5+.25,a:Math.random()*.8+.2,s:Math.random()*.22+.04}));}
+function draw(){ctx.clearRect(0,0,innerWidth,innerHeight);for(const p of stars){ctx.beginPath();ctx.fillStyle=`rgba(205,228,255,${p.a})`;ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();p.y+=p.s;if(p.y>innerHeight){p.y=0;p.x=Math.random()*innerWidth;}}requestAnimationFrame(draw);}
+addEventListener('resize',resize);resize();draw();
+const nav=document.getElementById('nav');document.getElementById('menuBtn').addEventListener('click',()=>nav.classList.toggle('open'));nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+const modal=document.getElementById('modal'),title=document.getElementById('modalTitle'),text=document.getElementById('modalText');
+function showModal(t,m){title.textContent=t;text.textContent=m;modal.classList.add('show')}
+document.querySelectorAll('[data-title]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();showModal(a.dataset.title,a.dataset.info)}));
+document.getElementById('researchMore').addEventListener('click',e=>{e.preventDefault();showModal('ماه چگونه به وجود آمد؟','فرضیه برخورد عظیم می‌گوید جرمی تقریباً هم‌اندازه مریخ با زمین اولیه برخورد کرد. مواد پرتاب‌شده از این برخورد در مدار زمین باقی ماندند و به‌تدریج ماه را ساختند. این توضیح با شواهد سنگ‌شناسی و مدل‌های رایانه‌ای پشتیبانی می‌شود، اما پژوهشگران هنوز درباره جزئیات برخورد و شکل‌گیری ماه تحقیق می‌کنند.')});
+document.getElementById('closeModal').addEventListener('click',()=>modal.classList.remove('show'));modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('show')});addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('show')});
+</script>
 </body>
 </html>
