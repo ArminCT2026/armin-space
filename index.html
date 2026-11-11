@@ -1,7 +1,125 @@
-<div class="card">
+.card p {
+    color: #b6c8e4;
+    line-height: 2;
+    font-size: 14px;
+}
+
+.research {
+    max-width: 850px;
+    margin: auto;
+    padding: 35px;
+    border-radius: 20px;
+    background: linear-gradient(140deg,#101e40,#080d20);
+    border: 1px solid #2873b7;
+    box-shadow: 0 0 30px #071d47;
+    line-height: 2.5;
+}
+
+.research h3 {
+    color: #68caff;
+    margin-bottom: 20px;
+}
+
+.research p {
+    color: #c4d5ed;
+}
+
+footer {
+    padding: 35px;
+    text-align: center;
+    background: #030817;
+    border-top: 1px solid #214c80;
+    color: #8da9ce;
+    line-height: 2.5;
+}
+
+@media(max-width:650px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav a {
+        margin: 5px;
+    }
+
+    .hero {
+        text-align: center;
+    }
+
+    .earth-area {
+        transform: scale(.85);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<header>
+    <div class="logo">🚀 ARMIN SPACE</div>
+
+    <nav>
+        <a href="#home">خانه</a>
+        <a href="#universe">جهان</a>
+        <a href="#research">پژوهش‌ها</a>
+    </nav>
+</header>
+
+<div class="hero" id="home">
+
+    <div class="intro">
+        <h1>ARMIN SPACE</h1>
+        <h2>به جهان ناشناخته خوش آمدید 🌌</h2>
+
+        <p>
+        سفری هیجان‌انگیز به اعماق کیهان،
+        سیارات شگفت‌انگیز و رازهای جهان.
+        اینجا مرزهای دانش را کشف می‌کنیم.
+        </p>
+
+        <a href="#universe" class="button">
+        🚀 شروع کاوش
+        </a>
+    </div>
+
+    <div class="earth-area">
+        <div class="orbit"></div>
+        <div class="earth"></div>
+    </div>
+
+</div>
+
+<section id="universe">
+
+    <h2 class="title">🌌 کاوش در جهان</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">🪐</div>
+            <h3>سیارات</h3>
+            <p>راز سیارات منظومه شمسی را کشف کنید.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🌌</div>
+            <h3>کهکشان‌ها</h3>
+            <p>سفری به میان میلیاردها ستاره.</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🕳️</div>
+            <h3>سیاه‌چاله‌ها</h3>
+            <p>آشنایی با اسرار عجیب سیاه‌چاله‌ها.</p>
+        </div>
+
+        <div class="card">
             <div class="icon">🚀</div>
             <h3>ماموریت‌های فضایی</h3>
-            <p>با سفرهای فضایی و اکتشافات انسان آشنا شوید.</p>
+            <p>ماجراجویی در تاریخ اکتشافات فضایی.</p>
         </div>
 
     </div>
@@ -10,42 +128,42 @@
 
 <section id="research">
 
-    <h2 class="title">🔬 پژوهش علمی ویژه</h2>
+    <h2 class="title">🔬 مرکز پژوهش‌های علمی</h2>
 
     <div class="research">
 
         <h3>🌍 تولد ماه؛ نتیجه یک برخورد عظیم کیهانی</h3>
 
         <p>
-        حدود ۴٫۵ میلیارد سال پیش، جرمی آسمانی به نام تیا
-        احتمالاً با زمین اولیه برخورد کرد.
+        حدود ۴٫۵ میلیارد سال پیش، جرمی آسمانی
+        به نام تیا احتمالاً با زمین اولیه برخورد کرد.
         </p>
 
         <p>
-        بر اساس فرضیه برخورد عظیم، مواد پرتاب‌شده از این
-        برخورد در اطراف زمین جمع شدند و به‌تدریج ماه را تشکیل دادند.
+        بر اساس فرضیه برخورد عظیم، مواد پرتاب‌شده
+        از این برخورد در اطراف زمین جمع شدند و
+        به تدریج ماه را تشکیل دادند.
         </p>
 
         <p>
-        این نظریه یکی از پذیرفته‌شده‌ترین توضیحات علمی
-        برای شکل‌گیری ماه است.
+        این نظریه یکی از پذیرفته‌شده‌ترین توضیحات
+        علمی برای شکل‌گیری ماه است.
         </p>
 
         <br>
 
-        <p><strong>نام پژوهشگر: ARMIN MOUSAVI</strong></p>
-
-        <p>موضوع: نجوم و شکل‌گیری منظومه شمسی</p>
+        <p><strong>پژوهشگر: ARMIN MOUSAVI</strong></p>
+        <p>موضوع: نجوم و منظومه شمسی</p>
 
     </div>
 
 </section>
 
 <footer>
-    <p>© 2026 ARMIN SPACE</p>
-    <p>Explore Beyond The Universe 🚀</p>
-    <br>
+    <h2>ARMIN SPACE 🚀</h2>
+    <p>Explore Beyond The Universe</p>
     <p>Created by ARMIN MOUSAVI</p>
+    <p>© 2026 All Rights Reserved</p>
 </footer>
 
 </body>
