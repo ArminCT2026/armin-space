@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="google-site-verification" content="mWU2wFauvjblt5ZST6eEKEn3lCMt_ggomNJCG3_ErS8" />
+<meta name="google-site-verification" content="mWU2wFauvjblt5ZST6eEKEn3lCMt_ggomNJCG3_ErS8">
+
+<meta name="description" content="ARMIN SPACE؛ سفری علمی به دنیای سیارات، کهکشان‌ها و شگفتی‌های جهان.">
 
 <title>ARMIN SPACE | کاوش در جهان</title>
-
-<meta name="description" content="آرمین اسپیس؛ سفری علمی به دنیای سیارات، فضا، کهکشان‌ها و پژوهش‌های شگفت‌انگیز علمی.">
 
 <style>
 *{
@@ -21,9 +21,9 @@
 body{
     font-family:Tahoma,Arial,sans-serif;
     background:#050817;
-    color:#fff;
-    overflow-x:hidden;
+    color:white;
     line-height:1.9;
+    overflow-x:hidden;
 }
 
 .stars{
@@ -46,11 +46,13 @@ body{
     to{transform:translateY(-350px);}
 }
 
+/* HEADER */
+
 header{
     position:sticky;
     top:0;
     z-index:100;
-    background:rgba(5,8,23,.92);
+    background:rgba(5,8,23,.94);
     backdrop-filter:blur(12px);
     border-bottom:1px solid #183b75;
     padding:15px 7%;
@@ -87,6 +89,8 @@ nav a:hover{
     cursor:pointer;
 }
 
+/* HERO */
+
 .hero{
     min-height:85vh;
     display:flex;
@@ -98,7 +102,7 @@ nav a:hover{
 }
 
 .hero h1{
-    font-size:55px;
+    font-size:52px;
     color:#55c8ff;
     text-shadow:0 0 25px #1679ff;
     margin-bottom:15px;
@@ -110,7 +114,7 @@ nav a:hover{
     font-size:18px;
 }
 
-.hero button{
+.main-button{
     margin-top:30px;
     padding:13px 30px;
     background:#168bff;
@@ -122,10 +126,12 @@ nav a:hover{
     transition:.3s;
 }
 
-.hero button:hover{
+.main-button:hover{
     background:#55c8ff;
     transform:scale(1.05);
 }
+
+/* SECTIONS */
 
 section{
     padding:75px 8%;
@@ -145,6 +151,8 @@ section{
     color:#cbd5e1;
 }
 
+/* CARDS */
+
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -162,7 +170,7 @@ section{
 }
 
 .card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-7px);
     border-color:#55c8ff;
     box-shadow:0 0 25px #087cff35;
 }
@@ -185,6 +193,8 @@ section{
     font-size:14px;
 }
 
+/* BUTTONS */
+
 .card button{
     margin-top:18px;
     padding:10px 20px;
@@ -193,21 +203,42 @@ section{
     background:#147de5;
     color:white;
     cursor:pointer;
+    font-family:inherit;
+    transition:.3s;
 }
 
 .card button:hover{
     background:#55c8ff;
+    color:#061020;
 }
+
+/* INFO BOX */
+
+.info-box{
+    max-width:850px;
+    margin:30px auto 0;
+    padding:25px;
+    background:#101d39;
+    border-right:4px solid #168bff;
+    border-radius:12px;
+    color:#d8e6ff;
+}
+
+.info-box h3{
+    color:#55c8ff;
+    margin-bottom:10px;
+}
+
+/* RESEARCH */
 
 .research-card{
     text-align:right;
     display:flex;
     flex-direction:column;
     justify-content:space-between;
-    min-height:280px;
+    min-height:290px;
 }
-
-.research-number{
+    .research-number{
     color:#55c8ff;
     font-size:13px;
     margin-bottom:10px;
@@ -221,34 +252,21 @@ section{
     align-self:flex-start;
 }
 
-.info-box{
-    max-width:850px;
-    margin:30px auto 0;
-    padding:25px;
-    background:#101d39;
-    border-right:4px solid #168bff;
-    border-radius:12px;
-    color:#d8e6ff;
-}
-  footer{
-    text-align:center;
-    padding:30px;
-    border-top:1px solid #183b75;
-    color:#8da5ca;
-    font-size:14px;
-}
-
-/* پنجره پژوهش */
+/* MODAL */
 
 .modal{
     display:none;
     position:fixed;
     inset:0;
-    z-index:500;
-    background:rgba(0,0,0,.85);
+    z-index:9999;
+    background:rgba(0,0,0,.88);
     justify-content:center;
     align-items:center;
     padding:15px;
+}
+
+.modal.show{
+    display:flex;
 }
 
 .modal-content{
@@ -259,24 +277,28 @@ section{
     max-width:800px;
     max-height:85vh;
     overflow-y:auto;
-    padding:30px;
+    padding:25px;
     position:relative;
+    box-shadow:0 0 35px #087cff30;
 }
 
 .modal-content h2{
     color:#55c8ff;
     margin-bottom:20px;
+    font-size:25px;
 }
 
 .modal-content h3{
     color:#70baff;
     margin-top:22px;
     margin-bottom:8px;
+    font-size:18px;
 }
 
 .modal-content p{
     color:#d0dcf0;
     margin-bottom:12px;
+    font-size:15px;
 }
 
 .close{
@@ -284,14 +306,28 @@ section{
     top:0;
     float:left;
     color:#ff7777;
-    font-size:28px;
+    font-size:30px;
     cursor:pointer;
     background:#0b1530;
     border:0;
-    z-index:2;
+    z-index:5;
+    font-family:inherit;
 }
 
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid #183b75;
+    color:#8da5ca;
+    font-size:14px;
+}
+
+/* MOBILE */
+
 @media(max-width:700px){
+
     nav{
         display:none;
         position:absolute;
@@ -314,7 +350,7 @@ section{
     }
 
     .hero h1{
-        font-size:38px;
+        font-size:35px;
     }
 
     .hero p{
@@ -330,8 +366,9 @@ section{
     }
 
     .modal-content{
-        padding:20px;
+        padding:18px;
     }
+
 }
 </style>
 </head>
@@ -340,10 +377,13 @@ section{
 
 <div class="stars"></div>
 
+<!-- HEADER -->
+
 <header>
+
     <div class="logo">ARMIN SPACE 🚀</div>
 
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <div class="menu-btn" id="menuBtn">☰</div>
 
     <nav id="nav">
         <a href="#home">خانه</a>
@@ -351,9 +391,10 @@ section{
         <a href="#discoveries">اکتشافات</a>
         <a href="#research">پژوهش علمی</a>
     </nav>
+
 </header>
 
-<!-- صفحه اصلی -->
+<!-- HOME -->
 
 <section class="hero" id="home">
 
@@ -366,13 +407,14 @@ section{
         دریچه‌ای تازه به سوی ناشناخته‌هاست.
     </p>
 
-    <button onclick="document.getElementById('planets').scrollIntoView()">
+    <button class="main-button"
+    onclick="document.getElementById('planets').scrollIntoView()">
         شروع کاوش 🚀
     </button>
 
 </section>
 
-<!-- سیارات -->
+<!-- PLANETS -->
 
 <section id="planets">
 
@@ -381,38 +423,38 @@ section{
     <div class="grid">
 
         <div class="card">
-            <img src="mercury.jpg.jfif" alt="سیاره عطارد">
+            <img src="mercury.jpg.jfif" alt="عطارد">
             <h3>عطارد</h3>
             <p>
-                کوچک‌ترین سیاره منظومه شمسی و نزدیک‌ترین سیاره به خورشید.
-                دمای سطح آن تغییرات بسیار زیادی دارد.
+                کوچک‌ترین سیاره منظومه شمسی و نزدیک‌ترین
+                سیاره به خورشید.
             </p>
         </div>
 
         <div class="card">
-            <img src="saturn.jpg.jfif" alt="سیاره زحل">
+            <img src="saturn.jpg.jfif" alt="زحل">
             <h3>زحل</h3>
             <p>
-                غول گازی زیبایی که به حلقه‌های عظیم و خیره‌کننده‌اش
-                معروف است.
+                غول گازی زیبایی که به حلقه‌های عظیم و
+                خیره‌کننده‌اش معروف است.
             </p>
         </div>
 
         <div class="card">
-            <img src="jupiter.jpg.jfif" alt="سیاره مشتری">
+            <img src="jupiter.jpg.jfif" alt="مشتری">
             <h3>مشتری</h3>
             <p>
-                بزرگ‌ترین سیاره منظومه شمسی که طوفان عظیم
-                لکه سرخ آن بسیار مشهور است.
+                بزرگ‌ترین سیاره منظومه شمسی که طوفان
+                عظیم لکه سرخ آن بسیار مشهور است.
             </p>
         </div>
 
         <div class="card">
-            <img src="mars.jpg.jfif" alt="سیاره مریخ">
+            <img src="mars.jpg.jfif" alt="مریخ">
             <h3>مریخ</h3>
             <p>
-                سیاره سرخ؛ یکی از مهم‌ترین مقصدهای پژوهش‌های
-                فضایی و جست‌وجوی حیات احتمالی.
+                سیاره سرخ؛ یکی از مهم‌ترین مقصدهای
+                پژوهش‌های فضایی و جست‌وجوی حیات احتمالی.
             </p>
         </div>
 
@@ -420,12 +462,11 @@ section{
 
 </section>
 
-<!-- اکتشافات -->
+<!-- DISCOVERIES -->
 
 <section id="discoveries">
 
     <h2 class="section-title">🔭 دنیای اکتشافات فضایی</h2>
-
     <div class="intro">
         <p>
             انسان همیشه به دنبال شناخت جهان اطراف خود بوده است.
@@ -433,12 +474,12 @@ section{
             هر روز اطلاعات بیشتری درباره کیهان به دست می‌آوریم.
         </p>
     </div>
+
     <div class="info-box">
         <h3>🚀 تلسکوپ فضایی جیمز وب</h3>
         <p>
-            تلسکوپ فضایی جیمز وب برای بررسی نخستین کهکشان‌ها،
-            مطالعه جو سیارات فراخورشیدی و مشاهده اجرام دوردست
-            جهان طراحی شده است.
+            تلسکوپ فضایی جیمز وب برای بررسی کهکشان‌های دوردست،
+            مطالعه جو سیارات فراخورشیدی و مشاهده اجرام کیهانی طراحی شده است.
         </p>
     </div>
 
@@ -453,7 +494,7 @@ section{
 
 </section>
 
-<!-- پژوهش ها -->
+<!-- RESEARCH -->
 
 <section id="research">
 
@@ -472,61 +513,75 @@ section{
     <div class="grid">
 
         <div class="card research-card">
+
             <div>
                 <div class="research-number">پژوهش شماره ۰۱</div>
+
                 <h3>🌕 ماه چگونه به وجود آمد؟</h3>
+
                 <p>
                     آیا ماه همیشه همراه زمین بوده است؟
                     نظریه برخورد عظیم چه چیزی درباره تولد ماه می‌گوید؟
                 </p>
             </div>
 
-            <button onclick="openResearch(0)">
+            <button type="button" onclick="openResearch(0)">
                 مطالعه کامل پژوهش
             </button>
+
         </div>
 
         <div class="card research-card">
+
             <div>
                 <div class="research-number">پژوهش شماره ۰۲</div>
+
                 <h3>⏳ سفر در زمان؛ علم یا خیال؟</h3>
+
                 <p>
                     آیا می‌توان به آینده یا گذشته سفر کرد؟
                     نظریه نسبیت اینشتین چه پاسخی دارد؟
                 </p>
             </div>
 
-            <button onclick="openResearch(1)">
+            <button type="button" onclick="openResearch(1)">
                 مطالعه کامل پژوهش
             </button>
+
         </div>
 
         <div class="card research-card">
+
             <div>
                 <div class="research-number">پژوهش شماره ۰۳</div>
+
                 <h3>👽 آیا ما در جهان تنها هستیم؟</h3>
+
                 <p>
                     آیا در سیارات دیگر هم زندگی وجود دارد؟
                     دانشمندان چگونه به دنبال حیات می‌گردند؟
                 </p>
             </div>
 
-            <button onclick="openResearch(2)">
+            <button type="button" onclick="openResearch(2)">
                 مطالعه کامل پژوهش
             </button>
+
         </div>
 
     </div>
 
 </section>
 
-<!-- پنجره نمایش پژوهش -->
+<!-- MODAL -->
 
-<div class="modal" id="researchModal" onclick="closeOutside(event)">
+<div class="modal" id="researchModal">
 
     <div class="modal-content">
 
-        <button class="close" onclick="closeResearch()">×</button>
+        <button class="close" id="closeModal" type="button">
+            ×
+        </button>
 
         <div id="researchText"></div>
 
@@ -534,25 +589,55 @@ section{
 
 </div>
 
+<!-- FOOTER -->
+
 <footer>
+
     <p>ARMIN SPACE</p>
+
     <p>کاوش در جهان، آغاز شناخت ناشناخته‌ها</p>
+
     <br>
+
     <p>Created by ARMIN MOUSAVI · 2026</p>
+
 </footer>
+
+<!-- JAVASCRIPT -->
 
 <script>
 
-function toggleMenu(){
-    document.getElementById("nav").classList.toggle("active");
-}
+/* MENU */
+
+const menuBtn = document.getElementById("menuBtn");
+const nav = document.getElementById("nav");
+
+menuBtn.addEventListener("click", function(){
+
+    nav.classList.toggle("active");
+
+});
+
+nav.querySelectorAll("a").forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        nav.classList.remove("active");
+
+    });
+
+});
+
+
+/* RESEARCH CONTENT */
 
 const researches = [
 
-
+`
 <h2>🌕 ماه چگونه به وجود آمد؟</h2>
 
 <h3>مقدمه</h3>
+
 <p>
 ماه تنها قمر طبیعی زمین است و از گذشته تاکنون
 توجه انسان را به خود جلب کرده است.
@@ -561,6 +646,7 @@ const researches = [
 </p>
 
 <h3>نظریه برخورد عظیم</h3>
+
 <p>
 یکی از پذیرفته‌شده‌ترین نظریه‌ها درباره پیدایش ماه،
 نظریه برخورد عظیم است.
@@ -570,8 +656,7 @@ const researches = [
 
 <p>
 پس از این برخورد، مقدار زیادی مواد سنگی به فضا پرتاب شد.
-این مواد به‌تدریج در مدار زمین جمع شدند و در نهایت
-ماه را تشکیل دادند.
+این مواد به‌تدریج در مدار زمین جمع شدند و در نهایت ماه را تشکیل دادند.
 </p>
 
 <h3>شواهد علمی</h3>
@@ -583,6 +668,7 @@ const researches = [
 </p>
 
 <h3>چرا ماه مهم است؟</h3>
+
 <p>
 گرانش ماه در ایجاد جزر و مد اقیانوس‌ها نقش دارد.
 همچنین حضور ماه به پایداری نسبی محور چرخش زمین کمک می‌کند.
@@ -590,15 +676,19 @@ const researches = [
 </p>
 
 <h3>نتیجه‌گیری</h3>
+
 <p>
 اگرچه هنوز جزئیات دقیق شکل‌گیری ماه در حال بررسی است،
 نظریه برخورد عظیم بهترین توضیح علمی موجود برای
 پیدایش قمر طبیعی زمین محسوب می‌شود.
 </p>
 ,
-  <h2>⏳ سفر در زمان؛ علم یا خیال؟</h2>
+
+
+<h2>⏳ سفر در زمان؛ علم یا خیال؟</h2>
 
 <h3>مقدمه</h3>
+
 <p>
 سفر در زمان یکی از جذاب‌ترین موضوعات علمی و تخیلی است.
 در فیلم‌ها گاهی انسان‌ها با یک دستگاه به گذشته یا آینده می‌روند،
@@ -606,6 +696,7 @@ const researches = [
 </p>
 
 <h3>نسبیت اینشتین</h3>
+
 <p>
 آلبرت اینشتین با نظریه نسبیت نشان داد که زمان برای
 همه ناظران به یک شکل نمی‌گذرد.
@@ -614,6 +705,7 @@ const researches = [
 </p>
 
 <h3>سفر به آینده</h3>
+
 <p>
 بر اساس نظریه نسبیت خاص، هرچه سرعت حرکت یک جسم
 به سرعت نور نزدیک‌تر شود، زمان برای آن جسم
@@ -622,12 +714,12 @@ const researches = [
 </p>
 
 <p>
-این موضوع فقط یک ایده داستانی نیست.
 اثر اتساع زمان با آزمایش ساعت‌های بسیار دقیق
 و همچنین در سامانه‌های ماهواره‌ای مانند GPS بررسی شده است.
 </p>
 
 <h3>سفر به گذشته</h3>
+
 <p>
 سفر به گذشته موضوعی بسیار پیچیده‌تر است.
 برخی راه‌حل‌های ریاضی در نسبیت عام،
@@ -637,6 +729,7 @@ const researches = [
 </p>
 
 <h3>کرم‌چاله‌ها</h3>
+
 <p>
 کرم‌چاله‌ها ساختارهای فرضی در فیزیک نظری هستند
 که ممکن است دو ناحیه دور از فضا-زمان را به هم متصل کنند.
@@ -645,6 +738,7 @@ const researches = [
 </p>
 
 <h3>پارادوکس پدربزرگ</h3>
+
 <p>
 یکی از پرسش‌های مشهور درباره سفر به گذشته،
 پارادوکس پدربزرگ است.
@@ -656,6 +750,7 @@ const researches = [
 </p>
 
 <h3>نتیجه‌گیری</h3>
+
 <p>
 سفر به آینده از طریق اتساع زمان، پدیده‌ای علمی
 و آزمایش‌شده است؛ اما سفر به گذشته هنوز در حد
@@ -668,6 +763,7 @@ const researches = [
 <h2>👽 آیا ما در جهان تنها هستیم؟</h2>
 
 <h3>مقدمه</h3>
+
 <p>
 جهان قابل مشاهده میلیاردها کهکشان دارد و هر کهکشان
 می‌تواند میزبان میلیاردها ستاره باشد.
@@ -677,6 +773,7 @@ const researches = [
 </p>
 
 <h3>سیارات فراخورشیدی</h3>
+
 <p>
 سیارات فراخورشیدی به سیاراتی گفته می‌شود که
 به دور ستاره‌ای غیر از خورشید می‌چرخند.
@@ -686,6 +783,7 @@ const researches = [
 </p>
 
 <h3>منطقه قابل سکونت</h3>
+
 <p>
 منطقه قابل سکونت محدوده‌ای در اطراف یک ستاره است
 که در آن، با توجه به شرایط مناسب جوی،
@@ -695,6 +793,7 @@ const researches = [
 </p>
 
 <h3>آیا مریخ زمانی میزبان حیات بوده است؟</h3>
+
 <p>
 شواهد زمین‌شناسی نشان می‌دهند که مریخ در گذشته
 رودخانه‌ها، دریاچه‌ها و محیط‌های آبی داشته است.
@@ -704,6 +803,7 @@ const researches = [
 </p>
 
 <h3>معادله دریک</h3>
+
 <p>
 معادله دریک چارچوبی برای فکر کردن درباره تعداد تمدن‌های
 قابل شناسایی در کهکشان راه شیری است.
@@ -713,6 +813,7 @@ const researches = [
 </p>
 
 <h3>پارادوکس فرمی</h3>
+
 <p>
 پارادوکس فرمی به یک پرسش جالب اشاره دارد:
 اگر جهان پر از ستاره و سیاره است،
@@ -730,6 +831,7 @@ const researches = [
 </p>
 
 <h3>نتیجه‌گیری</h3>
+
 <p>
 با وجود پیشرفت‌های علمی،
 تاکنون هیچ مدرک قطعی و تأییدشده‌ای
@@ -737,47 +839,69 @@ const researches = [
 اما گستردگی جهان باعث شده این پرسش
 یکی از مهم‌ترین موضوعات پژوهش علمی باقی بماند.
 </p>
+`
 
 
 ];
 
+
+/* OPEN RESEARCH */
+
+const modal = document.getElementById("researchModal");
+const researchText = document.getElementById("researchText");
+const closeModal = document.getElementById("closeModal");
+
 function openResearch(index){
 
-    document.getElementById("researchText").innerHTML =
-        researches[index];
+    if(index < 0 || index >= researches.length){
+        return;
+    }
 
-    document.getElementById("researchModal").style.display =
-        "flex";
+    researchText.innerHTML = researches[index];
+
+    modal.classList.add("show");
 
     document.body.style.overflow = "hidden";
+
 }
+
+
+/* CLOSE RESEARCH */
 
 function closeResearch(){
 
-    document.getElementById("researchModal").style.display =
-        "none";
-  document.body.style.overflow = "auto";
+    modal.classList.remove("show");
+
+    document.body.style.overflow = "auto";
+
 }
 
-function closeOutside(event){
+closeModal.addEventListener("click",closeResearch);
 
-    if(event.target.id === "researchModal"){
+
+/* CLOSE BY CLICKING OUTSIDE */
+
+modal.addEventListener("click",function(event){
+
+    if(event.target === modal){
+
         closeResearch();
-    }
-}
 
-document.addEventListener("keydown",function(event){
-
-    if(event.key === "Escape"){
-        closeResearch();
     }
 
 });
 
-document.querySelectorAll("nav a").forEach(link=>{
-    link.addEventListener("click",()=>{
-        document.getElementById("nav").classList.remove("active");
-    });
+
+/* CLOSE WITH ESCAPE */
+
+document.addEventListener("keydown",function(event){
+
+    if(event.key === "Escape" && modal.classList.contains("show")){
+
+        closeResearch();
+
+    }
+
 });
 
 </script>
